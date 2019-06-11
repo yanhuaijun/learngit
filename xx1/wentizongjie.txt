@@ -1,1 +1,21 @@
 #本文件用于工作当中遇到的问题总结
+1.git 的使用
+1.1安装git，配置个人的用户名称和电子邮件地址：
+    $ git config --global user.name "runoob"
+    $ git config --global user.email test@runoob.com
+
+1.2创建SSH Key,添加key。第1步，在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。
+   如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：  ssh-keygen -t rsa -C "youremail@example.com"
+
+   你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。
+   如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，
+   不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+   第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面：
+   完成以后，验证下这个key是不是正常工作：
+   $ ssh -T git@github.com
+   Attempts to ssh to github
+如果，看到：
+Hi xxx! You've successfully authenticated, but GitHub does not # provide shell access.
+恭喜你，你的设置已经成功了。
+
+1.3 git 提交文件
