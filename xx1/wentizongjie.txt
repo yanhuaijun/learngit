@@ -1,4 +1,4 @@
-#本文件用于工作当中遇到的问题总结
+#本文件用于工作当中遇到的问题汇总
 1.git 的使用
 1.1安装git，配置个人的用户名称和电子邮件地址：
     $ git config --global user.name "runoob"
@@ -19,3 +19,8 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
 恭喜你，你的设置已经成功了。
 
 1.3 git 提交文件分三步，第一.添加add要提交的文件，第二.提交文件并且添加本次提交的备注，第三.push到服务器
+
+2.Windows上面打war包
+   win+R 打开“运行”，输入cmd，进入控制台
+   cd进入到需要打包的目录： 输入 cd E:\work\test01  按回车
+   输入jar -cvf test.war ./*   按回车，test为你想打包后的项目名可以更换，然后就等控制台去压缩，压缩完后目录下就会有 test.war文件。
