@@ -24,3 +24,7 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
    win+R 打开“运行”，输入cmd，进入控制台
    cd进入到需要打包的目录： 输入 cd E:\work\test01  按回车
    输入jar -cvf test.war ./*   按回车，test为你想打包后的项目名可以更换，然后就等控制台去压缩，压缩完后目录下就会有 test.war文件。
+
+3.windows 下面tomcat 配置PHP环境
+  3.1下载php程序，是一个zip的压缩包，将下载的php压缩包解压到tomcat的安装路径下，并重命名为php,
+
