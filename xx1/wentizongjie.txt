@@ -27,4 +27,55 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
 
 3.windows 下面tomcat 配置PHP环境
   3.1下载php程序，是一个zip的压缩包，将下载的php压缩包解压到tomcat的安装路径下，并重命名为php,
+  查看电脑中是否已安装php的方法：计算机-属性-高级设置中点击“环境变量”，添加PATH环境变量，
+  将php解压路径添加到PATH中。之后打开cmd，输入php -v或 php -version。可以看到版本信息说明安装成功。
 
+  3.2将php路径下的php.ini-development 复制，将副本改名php.ini，之后用记事本打开php.ini。（可以看出;为其注释符）修改其中两项设置：
+    去掉extension_dir = "ext"前面的;
+    cgi.force_redirect修改为0，并去掉前面的;
+    即 cgi.force_redirect  = 0  （去掉这两项的注释）
+
+  3.3修改tomcat的conf文件夹下面的context.xml文件。
+    打开context.xml文件，在<Context >加上属性privileged="true"，如下所示，保存。
+    <Context privileged="true">
+
+  3.4修改tomcat的conf文件夹下面的web.xml文件。
+     在<web-app>中加入如下代码：
+     <servlet>
+        <servlet-name>php</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.CGIServlet</servlet-class>
+        <init-param>
+            <param-name>clientInputTimeout</param-name>
+            <param-value>200</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>executable</param-name>
+            <!--php下载解压/安装的路径-->
+            <param-value>E:\apache-tomcat-9.0.21\php\php-cgi.exe</param-value>
+        </init-param>
+        <init-param>
+            <param-name>passShellEnvironment</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cgiPathPrefix</param-name>
+            <!--自己tomcat下对应的url-->
+            <param-value>WEB-INF/phpbin</param-value>
+        </init-param>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>php</servlet-name>
+        <url-pattern>/phpbin/*</url-pattern>
+    </servlet-mapping>
+
+  3.5在webapps\ROOT\WEB-INF下新建一个phpbin的文件夹，在文件夹下面新建index.php文件，
+    用记事本打开index.php文件的编写代码如下：<?php phpinfo()?>   保存！
+
+  3.6启动 tomcat
+    打开浏览器，输入localhost:8080/phpbin/index.php,看到PHP页面，表明配置php配置成功！
