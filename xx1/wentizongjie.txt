@@ -81,11 +81,16 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
     打开浏览器，输入localhost:8080/phpbin/index.php,看到PHP页面，表明配置php配置成功！
     之后，我们就可以愉快地编写php代码了，编写的代码放置在phpbin路径下，在浏览器中打开相应的脚本，即可看到效果。
 
-4.windows cmd 执行多条命令
+4.tomcat 新增账户，用户名及密码。
+    4.1打开tomcat/conf/tomcat-users.xml这个文件，在文件中增加用户配置（停服务器修改！）
+    4.2新增：<user name="manager" password="admin" roles="manager-gui"/>  保存文件
+    4.3启动Tomcat服务器，打开浏览器输入地址http://localhost:8080，点击manage APP 填写设置好的用户名和密码。登录。
+
+5.windows cmd 执行多条命令
     （a & b 表示执行a再执行b，无论a是否成功）（aa && bb 就是执行aa，成功后再执行bb）（aa || bb 先执行aa，若执行成功则不再执行bb，若失败则执行bb）
+    shutdown.bat & timeout /t 5 & startup.bat & C: & E: & cd  apache-tomcat-9.0.21\bin
 
-
-
+6.
 
 
 
