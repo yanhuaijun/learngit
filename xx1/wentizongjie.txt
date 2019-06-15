@@ -90,8 +90,64 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
     （a & b 表示执行a再执行b，无论a是否成功）（aa && bb 就是执行aa，成功后再执行bb）（aa || bb 先执行aa，若执行成功则不再执行bb，若失败则执行bb）
     shutdown.bat & timeout /t 5 & startup.bat & C: & E: & cd  apache-tomcat-9.0.21\bin
 
-6.
+6.Appium环境搭建,需要用到的软件安装步骤如下：
 
+    6.1. jdk-8u121-window(32位的就下载32位的，64位的就下载64位的)。
+    安装jdk
+    配置jdk环境变量
+    JAVA_HOME D:\Java\jdk1.8.0_201
+    path D:\Java\jdk1.8.0_201 D:\Java\jdk1.8.0_201
+
+    6.2.Android-sdk_r24.3.4-windows（下载这个adt-bundle-windows-x86-20140624）
+    解压sdk文件，不需要安装
+
+    配置sdkk环境变量
+    ANDROID_HOME D:\adt-bundle-windows-x86-20140702\sdk
+
+    path D:\adt-bundle-windows-x86-20140702\sdk\tools
+         D:\adt-bundle-windows-x86-20140702\sdk\platform-tools
+
+    6.3.Python:（V3.6也可以）
+    自行下载安装
+
+    6.4.Node.js：node-v4.4.7-x64
+
+    进入官网地址并下载：https://nodejs.org/en/download/
+    下载后一路傻瓜式安装，安装完成后，运行cmd，输入node –v查看版本号，然后输入npm 不报错就行
+
+    6.5.appium：1.4.16.1
+
+    进入官网地址并下载
+    https://bitbucket.org/appium/appium.app/downloads/
+
+    appium安装好后：
+    找到这个文件安装目录D:\Appium\node_modules\.bin
+
+    将上面的地址添加到环境变量path下。
+
+    检查appium的所有需求环境
+
+    npm install -g appium-doctor
+
+    appium-doctor
+
+    打开cmd，输入appium-doctor，检查环境是否OK，出现allchecks were successful，说明环境OK；
+
+    6.6.Appium-python-Client
+    进入cmd 输入：pip install Appium-Python-Client。通过Python安装等待安装完成。
+
+    不安装第6步，在脚本中会有：from appium import webdriver 报错
+    第一次运行时可能会遇到这样的error：No module named appium
+    之所以会报这样的error是因为没有装client
+    解决：
+    pip install Appium-Python-Client
+
+    6.7.pycharm
+    自行下载安装
+
+    其中1-5是可以先下载的，6则需要在完成前面的五个步骤后才进行，7为可选Ide工具。
+    ---------------------
+    此文章参照：https://blog.csdn.net/qq_16206535/article/details/79586818
 
 
 
