@@ -155,6 +155,14 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
         for i in range(0,5):
             li.append(i)
         return li
+8.python 把JS数据转化为 json格式数据。
+    r = requests.get(ur1)
+    r.encoding='utf-8'
+    print(r.text)
+    jd = json.loads(r.text.strip('var dataZS='))    #去掉'var dataZS='将{}其变为json数据
+    print(jd)
+    print(jd['zs']['ac_name'])
+
 
 
 
