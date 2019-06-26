@@ -149,6 +149,13 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
     ---------------------
     此文章参照：https://blog.csdn.net/qq_16206535/article/details/79586818
 
+7.for 循环 返回值为列表的处理方法（注意、注意、注意return 要放在for循环外面）
+    def yy ():
+        li=[]
+        for i in range(0,5):
+            li.append(i)
+        return li
+
 
 
 
