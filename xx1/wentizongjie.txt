@@ -156,6 +156,7 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
             li.append(i)
         return li
 8.python 把JS数据转化为 json格式数据。
+    注意如果返回多个{}{}{},必须先切割之后（jj=r2.text.split(';')）再转
     r = requests.get(ur1)
     r.encoding='utf-8'
     print(r.text)
