@@ -164,7 +164,15 @@ Hi xxx! You've successfully authenticated, but GitHub does not # provide shell a
     print(jd)
     print(jd['zs']['ac_name'])
 
-
-
-
+9.windows上面安装虚拟机安装mac系统
+	9.1下载vm虚拟机安装包，产品秘钥可自己百度。
+	9.2下载mac镜像文件格式为cdr和ISO都可以
+	9.3用虚拟机安装mac系统，你选择系统的时候会发现根本就mac系统，那是因为你的vm还没有破解。
+	9.4破解vm，下载unlocker208破解包，208对应vm14版本，解压之后，干掉vm所有进程，以管理员身份运行
+		win-install.cmd 运行完，在打开vm，选择mac系统，安装。
+	9.5开机的时候报错：VMware Workstation不可恢复错误：(vcpu-0)vcpu-0:VEREIFY vmcore/vmm/main/physMem_monitor.c.1123日志文件位于“E:OS X\vmware.log
+	解决办法，找到OS X 10.9.vmx 用notepad++打开在 最后添加smc.version = "0" 保存好，重新开机。
+	参照：https://jingyan.baidu.com/article/f96699bbcb83a0894f3c1b56.html
+	9.6 选择磁盘工具，把40G的磁盘 抹掉 在把系统安装在上面。
+	安装步骤参照：https://jingyan.baidu.com/article/359911f548285f57ff03065e.html
 
