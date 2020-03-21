@@ -16,6 +16,7 @@ urlpatterns = [
     path('userinfor/', userinfor),
     path('hahaindex/', hahaindex),
     path('fenxindex/', index),
+path('ssion/', ssion1),
 ]
     #path('f/', f),
    # path(r'^life/(?P<nid>\d+)/',life),

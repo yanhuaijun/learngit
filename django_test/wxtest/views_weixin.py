@@ -60,7 +60,7 @@ def get_ticket():
         access_token = access_token1
         ticket = flush_ticket(access_token)
     return ticket
-print(get_ticket())
+# print(get_ticket())
 
 #生成随机数
 def randomone(n):
