@@ -3,7 +3,7 @@
 import requests
 
 
-def daidu():
+def baidu():
     ur1='https://www.anyknew.com/api/v1/sites/baidu'
     r1=requests.get(ur1)
     # print(r1.json())
@@ -64,7 +64,8 @@ def autohome():
         j +=1
 
 
-
+baidu()
+eastmoney()
 autohome()
 
 
